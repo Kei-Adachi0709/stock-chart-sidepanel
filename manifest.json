@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "stock-chart-sidepanel",
-  "version": "1.0",
-  "description": "サイドパネルで株価チャートを表示します",
+  "name": "Stock Side Panel",
+  "version": "1.2",
+  "description": "サイドパネルで株価チャートを表示・変更できます",
   "__icons": {
     "16": "icon.png",
     "48": "icon.png",
@@ -11,5 +11,5 @@
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "permissions": ["sidePanel"]
+  "permissions": ["sidePanel", "storage"]
 }

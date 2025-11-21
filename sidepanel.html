@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVIDIA Chart</title>
+    <title>Stock Chart</title>
     <style>
         body, html {
             margin: 0;
@@ -12,22 +12,58 @@
             width: 100%;
             overflow: hidden;
             background-color: #ffffff;
+            font-family: sans-serif;
         }
+        /* 上部の操作バー */
+        .control-bar {
+            height: 50px;
+            background-color: #f1f3f4;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ddd;
+        }
+        input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        /* チャートエリア（残りの高さを埋める） */
         .chart-container {
-            height: 100vh;
+            height: calc(100vh - 50px); /* 操作バーの分を引く */
             width: 100%;
         }
     </style>
 </head>
 <body>
 
+    <!-- 銘柄変更エリア -->
+    <div class="control-bar">
+        <input type="text" id="symbol-input" placeholder="例: NASDAQ:NVDA">
+        <button id="update-btn">変更</button>
+    </div>
+
     <!-- チャート表示エリア -->
     <div class="chart-container" id="tradingview_widget"></div>
     
-    <!-- 1. ダウンロードしたライブラリ -->
+    <!-- ライブラリとメイン処理 -->
     <script src="tv.js"></script>
-    
-    <!-- 2. 今回作った設定ファイル -->
     <script src="main.js"></script>
 
 </body>
