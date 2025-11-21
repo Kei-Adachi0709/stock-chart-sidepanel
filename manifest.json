@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "NVIDIA Side Panel Chart",
+  "name": "stock-chart-sidepanel",
   "version": "1.0",
-  "description": "サイドパネルでNVIDIAの株価チャートを表示します",
+  "description": "サイドパネルで株価チャートを表示します",
   "__icons": {
     "16": "icon.png",
     "48": "icon.png",
