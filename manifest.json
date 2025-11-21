@@ -3,7 +3,7 @@
   "name": "NVIDIA Side Panel Chart",
   "version": "1.0",
   "description": "サイドパネルでNVIDIAの株価チャートを表示します",
-  "icons": {
+  "__icons": {
     "16": "icon.png",
     "48": "icon.png",
     "128": "icon.png"
