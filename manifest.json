@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Stock Side Panel",
-  "version": "1.2",
+  "version": "1.3",
   "description": "サイドパネルで株価チャートを表示・変更できます",
   "__icons": {
     "16": "icon.png",
@@ -11,5 +11,8 @@
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "permissions": ["sidePanel", "storage"]
+  "permissions": ["sidePanel", "storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://s.tradingview.com;"
+  }
 }

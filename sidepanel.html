@@ -13,40 +13,57 @@
             overflow: hidden;
             background-color: #ffffff;
             font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
         }
         /* 上部の操作バー */
         .control-bar {
-            height: 50px;
+            height: 40px;
             background-color: #f1f3f4;
             display: flex;
             align-items: center;
-            padding: 0 10px;
-            box-sizing: border-box;
+            padding: 0 8px;
             border-bottom: 1px solid #ddd;
+            flex-shrink: 0;
         }
         input {
             flex: 1;
-            padding: 8px;
+            padding: 4px 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             margin-right: 8px;
-            font-size: 14px;
+            font-size: 13px;
         }
         button {
-            padding: 8px 16px;
+            padding: 4px 12px;
             background-color: #1a73e8;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 12px;
             font-weight: bold;
         }
         button:hover {
             background-color: #1557b0;
         }
+
+        /* 価格表示エリア（New!） */
+        .price-container {
+            height: 126px; /* 価格ウィジェットに丁度いい高さ */
+            width: 100%;
+            flex-shrink: 0;
+            border-bottom: 1px solid #eee;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
         /* チャートエリア（残りの高さを埋める） */
         .chart-container {
-            height: calc(100vh - 50px); /* 操作バーの分を引く */
+            flex: 1;
             width: 100%;
         }
     </style>
@@ -59,10 +76,14 @@
         <button id="update-btn">変更</button>
     </div>
 
-    <!-- チャート表示エリア -->
+    <!-- 1. 価格表示エリア (iframeで外部ウィジェットを表示) -->
+    <div class="price-container">
+        <iframe id="price-frame" src=""></iframe>
+    </div>
+
+    <!-- 2. チャート表示エリア -->
     <div class="chart-container" id="tradingview_widget"></div>
     
-    <!-- ライブラリとメイン処理 -->
     <script src="tv.js"></script>
     <script src="main.js"></script>
 
